@@ -17,29 +17,6 @@ Before you begin, ensure you have the following:
     bq mk --dataset sandboxportal:sandboxdataset
     ```
 
-## Running the Project
-
-Follow these steps to run the food label generation project:
-
-1.  **Load Food Product Data:**
-    Navigate to the directory containing the project files in your terminal and run the `load_source.sh` script. This script will load the data from `food_products.csv` into a BigQuery table named `food_products` within your `sandboxdataset`.
-    ```bash
-    ./load_source.sh
-    ```
-
-2.  **Set Up the BigQuery ML Model (Gemini Pro):**
-    Run the `setup_bqml_vertex.sh` script. This script likely contains the commands to create the BigQuery ML model that uses the Gemini Pro model from Vertex AI.
-    ```bash
-    ./setup_bqml_vertex.sh
-    ```
-    *(Note: The exact content of this script is not provided, but it should handle the creation of the `sandboxportal.sandboxdataset.model_cloud_ai_gemini_pro` model.)*
-
-3.  **Generate Food Labels:**
-    Execute the `run_genai_food_labels.sh` script. This script will run the SQL query defined in `genai_food_labels.sql`, which uses the Gemini Pro model to generate nutrition labels based on the data in your `food_products` table and stores the results in a new table called `genai_food_labels` within your `sandboxdataset`.
-    ```bash
-    ./run_genai_food_labels.sh
-    ```
-
 ## Project Files
 
 * **`food_products.csv`**: Contains the source data for food products (e.g., brand names).
